@@ -1,7 +1,7 @@
 package sspc.gob.mx.psr.dto;
 
 import lombok.Data;
-import sspc.gob.mx.psr.model.catalog.Escolaridad;
+import sspc.gob.mx.psr.model.Escolaridad;
 
 @Data
 public class EscolaridadDto {

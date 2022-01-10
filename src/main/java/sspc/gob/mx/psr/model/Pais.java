@@ -1,4 +1,4 @@
-package sspc.gob.mx.psr.model.catalog;
+package sspc.gob.mx.psr.model;
 
 import lombok.Getter;
 

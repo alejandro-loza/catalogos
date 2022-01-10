@@ -1,7 +1,7 @@
 package sspc.gob.mx.psr.dto;
 
 import lombok.Data;
-import sspc.gob.mx.psr.model.catalog.Parentesco;
+import sspc.gob.mx.psr.model.Parentesco;
 
 @Data
 public class ParentescoDto {

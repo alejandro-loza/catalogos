@@ -1,7 +1,7 @@
 package sspc.gob.mx.psr.services;
 
 import sspc.gob.mx.psr.dto.PaisDto;
-import sspc.gob.mx.psr.model.catalog.Pais;
+import sspc.gob.mx.psr.model.Pais;
 
 import java.util.List;
 

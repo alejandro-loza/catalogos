@@ -1,7 +1,7 @@
 package sspc.gob.mx.psr.dto;
 
 import lombok.Data;
-import sspc.gob.mx.psr.model.catalog.Etnia;
+import sspc.gob.mx.psr.model.Etnia;
 
 @Data
 public class EtniaDto {

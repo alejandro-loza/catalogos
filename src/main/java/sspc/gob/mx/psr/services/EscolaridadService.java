@@ -1,7 +1,7 @@
 package sspc.gob.mx.psr.services;
 
 import sspc.gob.mx.psr.dto.EscolaridadDto;
-import sspc.gob.mx.psr.model.catalog.Escolaridad;
+import sspc.gob.mx.psr.model.Escolaridad;
 
 import java.util.List;
 

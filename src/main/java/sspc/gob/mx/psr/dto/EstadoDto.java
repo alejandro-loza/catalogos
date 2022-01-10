@@ -1,7 +1,7 @@
 package sspc.gob.mx.psr.dto;
 
 import lombok.Data;
-import sspc.gob.mx.psr.model.catalog.Estado;
+import sspc.gob.mx.psr.model.Estado;
 
 @Data
 public class EstadoDto {

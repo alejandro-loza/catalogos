@@ -1,7 +1,7 @@
 package sspc.gob.mx.psr.dto;
 
 import lombok.Data;
-import sspc.gob.mx.psr.model.catalog.Municipio;
+import sspc.gob.mx.psr.model.Municipio;
 
 @Data
 public class MunicipioDto {
