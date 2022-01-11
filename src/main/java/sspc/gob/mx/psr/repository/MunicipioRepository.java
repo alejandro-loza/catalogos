@@ -1,9 +1,9 @@
-package sspc.gob.mx.psr.repository.catalog;
+package sspc.gob.mx.psr.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import sspc.gob.mx.psr.model.catalog.Estado;
-import sspc.gob.mx.psr.model.catalog.Municipio;
+import sspc.gob.mx.psr.model.Estado;
+import sspc.gob.mx.psr.model.Municipio;
 
 import java.util.List;
 

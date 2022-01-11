@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sspc.gob.mx.psr.model.catalog.EstadoCivil;
 import sspc.gob.mx.psr.services.*;
 
 @RequestMapping("/catalogo")

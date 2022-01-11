@@ -1,6 +1,6 @@
 package sspc.gob.mx.psr.dto;
 
-import sspc.gob.mx.psr.model.catalog.Ocupacion;
+import sspc.gob.mx.psr.model.Ocupacion;
 
 public class OcupacionDto {
     public Long id;

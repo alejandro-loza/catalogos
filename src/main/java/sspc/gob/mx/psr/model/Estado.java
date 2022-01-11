@@ -1,4 +1,4 @@
-package sspc.gob.mx.psr.model.catalog;
+package sspc.gob.mx.psr.model;
 
 import lombok.Getter;
 
@@ -6,27 +6,28 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity
 @Getter
-@Table(name = "cat_parentesco")
-public class Parentesco {
-
+@Table(name = "cat_estado")
+public class Estado {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_cat_parentesco")
-    private Long id;
+    @Column(name = "id_cat_estado")
+    public Long id;
 
     @NotBlank
     @NotNull
     @Size(min = 1, max = 20)
-    private String nombre;
+    public String nombre;
 
     @Size(min = 1, max = 50)
-    private String descripcion;
+    public String descripcion;
 
     @NotNull
-    private boolean activo = true;
+    public boolean activo = true;
+
 
 }

@@ -1,7 +1,7 @@
 package sspc.gob.mx.psr.services;
 
 import sspc.gob.mx.psr.dto.EstadoDto;
-import sspc.gob.mx.psr.model.catalog.Estado;
+import sspc.gob.mx.psr.model.Estado;
 
 import java.util.List;
 

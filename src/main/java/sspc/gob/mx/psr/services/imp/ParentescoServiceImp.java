@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sspc.gob.mx.psr.dto.ParentescoDto;
 import sspc.gob.mx.psr.exeptions.ItemNotFoundException;
-import sspc.gob.mx.psr.model.catalog.Parentesco;
-import sspc.gob.mx.psr.repository.catalog.ParentescoRepository;
+import sspc.gob.mx.psr.model.Parentesco;
+import sspc.gob.mx.psr.repository.ParentescoRepository;
 import sspc.gob.mx.psr.services.ParentescoService;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package sspc.gob.mx.psr.model.catalog;
+package sspc.gob.mx.psr.model;
 
 import lombok.Getter;
 
@@ -7,19 +7,19 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+
 @Entity
 @Getter
-@Table(name = "cat_ocupacion")
-public class Ocupacion {
-
+@Table(name = "cat_escolaridad")
+public class Escolaridad {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_cat_ocupacion")
+    @GeneratedValue
+    @Column(name = "id_cat_escolaridad")
     public Long id;
 
-    @NotBlank
     @NotNull
-    @Size(min = 1, max = 20)
+    @NotBlank
+    @Size(min = 1, max = 30)
     public String nombre;
 
     @Size(min = 1, max = 50)
@@ -27,5 +27,4 @@ public class Ocupacion {
 
     @NotNull
     public boolean activo = true;
-
 }

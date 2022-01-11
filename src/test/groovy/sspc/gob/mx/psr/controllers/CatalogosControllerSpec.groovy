@@ -6,9 +6,9 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.http.HttpStatus
 import org.springframework.web.client.RestTemplate
 import spock.lang.Specification
-import sspc.gob.mx.psr.model.catalog.Municipio
-import sspc.gob.mx.psr.repository.catalog.EstadoRepository
-import sspc.gob.mx.psr.repository.catalog.MunicipioRepository
+import sspc.gob.mx.psr.model.Municipio
+import sspc.gob.mx.psr.repository.EstadoRepository
+import sspc.gob.mx.psr.repository.MunicipioRepository
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class CatalogosControllerSpec extends Specification {

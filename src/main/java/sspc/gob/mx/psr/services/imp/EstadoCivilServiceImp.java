@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sspc.gob.mx.psr.dto.EstadoCivilDto;
 import sspc.gob.mx.psr.exeptions.ItemNotFoundException;
-import sspc.gob.mx.psr.model.catalog.EstadoCivil;
-import sspc.gob.mx.psr.repository.catalog.EstadoCivilRepository;
+import sspc.gob.mx.psr.model.EstadoCivil;
+import sspc.gob.mx.psr.repository.EstadoCivilRepository;
 import sspc.gob.mx.psr.services.EstadoCivilService;
 
 import java.util.List;

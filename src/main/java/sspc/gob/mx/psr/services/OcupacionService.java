@@ -1,7 +1,7 @@
 package sspc.gob.mx.psr.services;
 
 import sspc.gob.mx.psr.dto.OcupacionDto;
-import sspc.gob.mx.psr.model.catalog.Ocupacion;
+import sspc.gob.mx.psr.model.Ocupacion;
 
 import java.util.List;
 

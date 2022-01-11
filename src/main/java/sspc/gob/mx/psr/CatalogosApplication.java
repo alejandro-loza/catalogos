@@ -7,10 +7,10 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-public class PsrApplication {
+public class CatalogosApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PsrApplication.class, args);
+		SpringApplication.run(CatalogosApplication.class, args);
 	}
 
 	@Bean
