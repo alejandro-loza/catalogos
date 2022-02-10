@@ -38,6 +38,6 @@ out/
 .idea
 
 ## config
-application.yaml
+application_.yaml
 
 target/

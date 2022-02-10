@@ -12,9 +12,9 @@ class PaisControllerSpec extends Specification {
     int port
     RestTemplate rest = new RestTemplate()
 
-    def "Deberia traer todos los paises "(){
+    def "Deberia traer todos los paises "() {
         when:
-        def resp = rest.getForEntity("http://localhost:${ port }/catalogo/pais", List)?.body
+        def resp = rest.getForEntity("http://localhost:${ port }/catalogos/pais", List)?.body
 
         then:
         assert resp.size() == 130

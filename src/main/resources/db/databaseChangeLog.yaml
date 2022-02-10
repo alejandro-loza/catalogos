@@ -19,6 +19,28 @@ databaseChangeLog:
   - include:
       file: db/cat_parentesco.yaml
   - include:
+      file: db/jur/cat_asunto.yaml
+  - include:
+      file: db/jur/cat_beneficio.yaml
+  - include:
+      file: db/jur/cat_delito.yaml
+  - include:
+      file: db/jur/cat_destinatario.yaml
+  - include:
+      file: db/jur/cat_estatus.yaml
+  - include:
+      file: db/jur/cat_estatus_registro.yaml
+  - include:
+      file: db/jur/cat_juzgado.yaml
+  - include:
+      file: db/jur/cat_modalidad.yaml
+  - include:
+      file: db/jur/cat_sistema.yaml
+  - include:
+      file: db/jur/cat_tipo_documento.yaml
+  - include:
+      file: db/jur/cat_tipo_tratamiento.yaml
+  - include:
       file: db/data/estados_data.yaml
   - include:
       file: db/data/municipio_data.yaml

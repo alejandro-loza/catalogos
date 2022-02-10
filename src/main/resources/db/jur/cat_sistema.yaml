@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: cat_sistema
+      author: alejandro.loza
+      changes:
+        - createTable:
+            tableName: cat_sistema
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: cat_sistema_pkey
+                  name: id_cat_sistema
+                  type: INTEGER
+              - column:
+                  constraints:
+                    nullable: false
+                  name: nombre
+                  type: VARCHAR(20)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: descripcion
+                  type: VARCHAR(300)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: activo
+                  type: boolean

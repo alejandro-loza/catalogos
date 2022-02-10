@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: cat_asunto
+      author: alejandro.loza
+      changes:
+        - createTable:
+            tableName: cat_asunto
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: cat_asunto_pkey
+                  name: id_cat_asunto
+                  type: INTEGER
+              - column:
+                  constraints:
+                    nullable: false
+                  name: nombre
+                  type: VARCHAR(20)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: descripcion
+                  type: VARCHAR(300)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: activo
+                  type: boolean

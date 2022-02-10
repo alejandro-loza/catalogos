@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import sspc.gob.mx.psr.dto.EstadoDto;
 import sspc.gob.mx.psr.services.*;
 
-@RequestMapping("/catalogo")
+@RequestMapping("/catalogos")
 @RestController
 public class CatalogosController {
 
@@ -52,9 +53,19 @@ public class CatalogosController {
         return new ResponseEntity<>( estadoservicio.lista(), HttpStatus.OK);
     }
 
+    @GetMapping(path = "/estado/{estadoId}", produces = "application/json")
+    ResponseEntity estado(@PathVariable("estadoId") Long estadoId) {
+        return new ResponseEntity<>( new EstadoDto( estadoservicio.busca(estadoId)), HttpStatus.OK);
+    }
+
     @GetMapping(path="/estado/{estadoId}/municipio", produces = "application/json")
     ResponseEntity municipios(@PathVariable("estadoId") Long estadoId) {
         return new ResponseEntity<>( municipioService.muncipiosPorEstado(estadoservicio.busca(estadoId)), HttpStatus.OK);
+    }
+
+    @GetMapping(path="/municipio/{municipioId}", produces = "application/json")
+    ResponseEntity municipio( @PathVariable("municipioId") Long municipioId) {
+        return new ResponseEntity<>( municipioService.busca(municipioId), HttpStatus.OK);
     }
 
     @GetMapping(path = "/estadoCivil", produces = "application/json")

@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: cat_modalidad
+      author: alejandro.loza
+      changes:
+        - createTable:
+            tableName: cat_modalidad
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: cat_modalidad_pkey
+                  name: id_cat_modalidad
+                  type: INTEGER
+              - column:
+                  constraints:
+                    nullable: false
+                  name: nombre
+                  type: VARCHAR(20)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: descripcion
+                  type: VARCHAR(300)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: activo
+                  type: BIT(1)

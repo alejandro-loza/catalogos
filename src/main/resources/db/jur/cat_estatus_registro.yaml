@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: cat_estatus_registro
+      author: alejandro.loza
+      changes:
+        - createTable:
+            tableName: cat_estatus_registro
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: cat_estatus_registro_pkey
+                  name: id_cat_estatus
+                  type: INTEGER
+              - column:
+                  constraints:
+                    nullable: false
+                  name: nombre
+                  type: VARCHAR(20)
+              - column:
+                  name: descripcion
+                  type: VARCHAR(50)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: activo
+                  type: boolean

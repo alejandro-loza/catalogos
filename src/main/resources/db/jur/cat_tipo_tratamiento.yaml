@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: cat_tipo_tratamiento
+      author: alejandro.loza
+      changes:
+        - createTable:
+            tableName: cat_tipo_tratamiento
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: cat_tipo_tratamiento_pkey
+                  name: id_cat_tipo_tratamiento
+                  type: INTEGER
+              - column:
+                  constraints:
+                    nullable: false
+                  name: nombre
+                  type: VARCHAR(30)
+              - column:
+                  name: descripcion
+                  type: VARCHAR(30)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: activo
+                  type: boolean

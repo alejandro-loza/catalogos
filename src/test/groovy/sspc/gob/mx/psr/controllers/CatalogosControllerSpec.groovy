@@ -20,12 +20,10 @@ class CatalogosControllerSpec extends Specification {
     @Autowired
     MunicipioRepository municipioRepository
 
-    @Autowired
-    EstadoRepository estadoRepository
 
     def "Deberia traer todos los estados de la republica"(){
         when:
-        def resp = rest.getForEntity("http://localhost:${ port }/catalogo/estado", List)?.body
+        def resp = rest.getForEntity("http://localhost:${ port }/catalogos/estado", List)?.body
 
         then:
         assert resp.size() == 33
@@ -34,7 +32,7 @@ class CatalogosControllerSpec extends Specification {
 
     def "Deberia traer todos los municipios de la hidalgo"(){
         when:
-        def resp = rest.getForEntity("http://localhost:${ port }/catalogo/estado/13/municipio", List)?.body
+        def resp = rest.getForEntity("http://localhost:${ port }/catalogos/estado/13/municipio", List)?.body
 
         then:
         assert resp.size() == 84
@@ -45,20 +43,22 @@ class CatalogosControllerSpec extends Specification {
 
 
         when:
-        def resp = rest.getForEntity("http://localhost:${ port }/catalogo/estado/1/municipio", List)?.body
+        def resp = rest.getForEntity("http://localhost:${ port }/catalogos/estado/1/municipio", List)?.body
 
         then:
-        assert resp == [[id:1001, nombre:'Aguascalientes', descripcion:'', estado:'AGUASCALIENTES', activo:true],
-                        [id:1002, nombre:'Asientos', descripcion:'', estado:'AGUASCALIENTES', activo:true],
-                        [id:1003, nombre:'Calvillo', descripcion:'', estado:'AGUASCALIENTES', activo:true],
-                        [id:1004, nombre:'Cosio', descripcion:'', estado:'AGUASCALIENTES', activo:true],
-                        [id:1005, nombre:'Jesús María', descripcion:'', estado:'AGUASCALIENTES', activo:true],
-                        [id:1006, nombre:'Pabellón de Arteaga', descripcion:'', estado:'AGUASCALIENTES', activo:true],
-                        [id:1007, nombre:'Rincón de Ramos', descripcion:'', estado:'AGUASCALIENTES', activo:true],
-                        [id:1008, nombre:'San José de García', descripcion:'', estado:'AGUASCALIENTES', activo:true],
-                        [id:1009, nombre:'Tepezalá', descripcion:'', estado:'AGUASCALIENTES', activo:true],
-                        [id:1010, nombre:'El Llano', descripcion:'', estado:'AGUASCALIENTES', activo:true],
-                        [id:1011, nombre:'San Francisco de los Romo', descripcion:'', estado:'AGUASCALIENTES', activo:true]]
+        assert resp == [
+                [id:1001, nombre:'Aguascalientes', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1002, nombre:'Asientos', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1003, nombre:'Calvillo', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1004, nombre:'Cosio', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1005, nombre:'Jesús María', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1006, nombre:'Pabellón de Arteaga', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1007, nombre:'Rincón de Ramos', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1008, nombre:'San José de García', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1009, nombre:'Tepezalá', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1010, nombre:'El Llano', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1011, nombre:'San Francisco de los Romo', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true]
+        ]
 
     }
 
@@ -70,26 +70,27 @@ class CatalogosControllerSpec extends Specification {
         municipioRepository.save(aguascalientesCiudad)
 
         when:
-        def resp = rest.getForEntity("http://localhost:${ port }/catalogo/estado/1/municipio", List)?.body
+        def resp = rest.getForEntity("http://localhost:${ port }/catalogos/estado/1/municipio", List)?.body
 
         then:
         assert resp == [
-                        [id:1002, nombre:'Asientos', descripcion:'', estado:'AGUASCALIENTES', activo:true],
-                        [id:1003, nombre:'Calvillo', descripcion:'', estado:'AGUASCALIENTES', activo:true],
-                        [id:1004, nombre:'Cosio', descripcion:'', estado:'AGUASCALIENTES', activo:true],
-                        [id:1005, nombre:'Jesús María', descripcion:'', estado:'AGUASCALIENTES', activo:true],
-                        [id:1006, nombre:'Pabellón de Arteaga', descripcion:'', estado:'AGUASCALIENTES', activo:true],
-                        [id:1007, nombre:'Rincón de Ramos', descripcion:'', estado:'AGUASCALIENTES', activo:true],
-                        [id:1008, nombre:'San José de García', descripcion:'', estado:'AGUASCALIENTES', activo:true],
-                        [id:1009, nombre:'Tepezalá', descripcion:'', estado:'AGUASCALIENTES', activo:true],
-                        [id:1010, nombre:'El Llano', descripcion:'', estado:'AGUASCALIENTES', activo:true],
-                        [id:1011, nombre:'San Francisco de los Romo', descripcion:'', estado:'AGUASCALIENTES', activo:true]]
+                [id:1002, nombre:'Asientos', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1003, nombre:'Calvillo', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1004, nombre:'Cosio', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1005, nombre:'Jesús María', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1006, nombre:'Pabellón de Arteaga', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1007, nombre:'Rincón de Ramos', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1008, nombre:'San José de García', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1009, nombre:'Tepezalá', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1010, nombre:'El Llano', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1011, nombre:'San Francisco de los Romo', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true]]
+
 
     }
 
     def "Deberia traer todos los municipios de la guerrero"(){
         when:
-        def resp = rest.getForEntity("http://localhost:${ port }/catalogo/estado/12/municipio", List)?.body
+        def resp = rest.getForEntity("http://localhost:${ port }/catalogos/estado/12/municipio", List)?.body
 
         then:
         assert resp.size() == 81
@@ -98,7 +99,7 @@ class CatalogosControllerSpec extends Specification {
 
     def "Deberia traer todos los estados civiles"(){
         when:
-        def resp = rest.getForEntity("http://localhost:${ port }/catalogo/estadoCivil", List)?.body
+        def resp = rest.getForEntity("http://localhost:${ port }/catalogos/estadoCivil", List)?.body
 
         then:
         assert resp.size() == 8
@@ -114,7 +115,7 @@ class CatalogosControllerSpec extends Specification {
 
     def "Deberia traer todos las escolaridades"(){
         when:
-        def resp = rest.getForEntity("http://localhost:${ port }/catalogo/escolaridad", List)?.body
+        def resp = rest.getForEntity("http://localhost:${ port }/catalogos/escolaridad", List)?.body
 
         then:
         assert resp.size() == 19
@@ -124,7 +125,7 @@ class CatalogosControllerSpec extends Specification {
 
     def "Deberia traer todos las etnias"(){
         when:
-        def resp = rest.getForEntity("http://localhost:${ port }/catalogo/etnia", List)
+        def resp = rest.getForEntity("http://localhost:${ port }/catalogos/etnia", List)
 
         then:
         assert resp.getStatusCode() == HttpStatus.OK
@@ -133,7 +134,7 @@ class CatalogosControllerSpec extends Specification {
 
     def "Deberia traer todos las ocupaciones"(){
         when:
-        def resp = rest.getForEntity("http://localhost:${ port }/catalogo/ocupacion", List)
+        def resp = rest.getForEntity("http://localhost:${ port }/catalogos/ocupacion", List)
 
         then:
         assert resp.getStatusCode() == HttpStatus.OK
@@ -142,7 +143,7 @@ class CatalogosControllerSpec extends Specification {
 
     def "Deberia traer todos los parentescos"(){
         when:
-        def resp = rest.getForEntity("http://localhost:${ port }/catalogo/parentesco", List)
+        def resp = rest.getForEntity("http://localhost:${ port }/catalogos/parentesco", List)
 
         then:
         assert resp.getStatusCode() == HttpStatus.OK

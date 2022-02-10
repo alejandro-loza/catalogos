@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: cat_tipo_documento
+      author: alejandro.loza
+      changes:
+        - createTable:
+            tableName: cat_tipo_documento
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: cat_tipo_documento_pkey
+                  name: id_documento
+                  type: INTEGER
+              - column:
+                  constraints:
+                    nullable: false
+                  name: nombre
+                  type: VARCHAR(30)
+              - column:
+                  name: descripcion
+                  type: VARCHAR(30)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: activo
+                  type: boolean

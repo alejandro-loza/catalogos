@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: cat_beneficio
+      author: alejandro.loza
+      changes:
+        - createTable:
+            tableName: cat_beneficio
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: cat_beneficio_pkey
+                  name: id_cat_beneficio
+                  type: INTEGER
+              - column:
+                  constraints:
+                    nullable: false
+                  name: nombre
+                  type: VARCHAR(20)
+              - column:
+                  name: descripcion
+                  type: VARCHAR(50)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: activo
+                  type: boolean
