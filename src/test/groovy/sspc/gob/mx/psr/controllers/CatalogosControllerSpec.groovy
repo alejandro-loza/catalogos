@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus
 import org.springframework.web.client.RestTemplate
 import spock.lang.Specification
 import sspc.gob.mx.psr.model.Municipio
+import sspc.gob.mx.psr.model.juridicos.Asunto
+import sspc.gob.mx.psr.repository.AsuntoRepository
 import sspc.gob.mx.psr.repository.EstadoRepository
 import sspc.gob.mx.psr.repository.MunicipioRepository
 
@@ -19,6 +21,9 @@ class CatalogosControllerSpec extends Specification {
 
     @Autowired
     MunicipioRepository municipioRepository
+
+    @Autowired
+    AsuntoRepository asuntoRepository
 
 
     def "Deberia traer todos los estados de la republica"(){
@@ -149,6 +154,34 @@ class CatalogosControllerSpec extends Specification {
         assert resp.getStatusCode() == HttpStatus.OK
         assert resp.body
         assert resp.body == [[id:1, nombre:'PADRE'], [id:2, nombre:'MADRE'], [id:3, nombre:'CÓNYUGE']]
+    }
+
+    def "Deberia traer todos los asuntos"(){
+        given:'una lista de asuntos guardados'
+        Asunto asunto1 = new Asunto()
+        asunto1.with {
+            id =123
+            nombre = 'test1'
+            activo = true
+        }
+        asuntoRepository.save(asunto1)
+
+        Asunto asunto2 = new Asunto()
+        asunto2.with {
+            id = 456
+            nombre = 'test2'
+            activo = true
+        }
+        asuntoRepository.save(asunto2)
+
+        when:
+        def resp = rest.getForEntity("http://localhost:${ port }/catalogos/asunto", List)
+
+        then:
+        assert resp != null
+
+
+
     }
 
     private static ArrayList<LinkedHashMap<String, Integer>> escolaridades() {

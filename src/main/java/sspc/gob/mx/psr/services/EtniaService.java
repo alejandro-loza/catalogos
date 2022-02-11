@@ -7,6 +7,5 @@ import java.util.List;
 
 public interface EtniaService {
     List<EtniaDto> lista();
-
     Etnia busca(Long id);
 }

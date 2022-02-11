@@ -7,17 +7,16 @@ databaseChangeLog:
             tableName: cat_asunto
             columns:
               - column:
+                  name: id_cat_asunto
+                  type: INT
                   constraints:
                     nullable: false
                     primaryKey: true
-                    primaryKeyName: cat_asunto_pkey
-                  name: id_cat_asunto
-                  type: INTEGER
               - column:
                   constraints:
                     nullable: false
                   name: nombre
-                  type: VARCHAR(20)
+                  type: VARCHAR(30)
               - column:
                   constraints:
                     nullable: false
