@@ -10,7 +10,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     primaryKey: true
-                    primaryKeyName: cat_destinatario_pkey
+                    autoIncrement: true
                   name: id_cat_destinatario
                   type: INTEGER
               - column:

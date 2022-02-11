@@ -160,8 +160,8 @@ class CatalogosControllerSpec extends Specification {
         given:'una lista de asuntos guardados'
         Asunto asunto1 = new Asunto()
         asunto1.with {
-            id =123
             nombre = 'test1'
+            descripcion = 'test'
             activo = true
         }
         asuntoRepository.save(asunto1)
@@ -170,6 +170,7 @@ class CatalogosControllerSpec extends Specification {
         asunto2.with {
             id = 456
             nombre = 'test2'
+            descripcion = 'test'
             activo = true
         }
         asuntoRepository.save(asunto2)
@@ -179,8 +180,6 @@ class CatalogosControllerSpec extends Specification {
 
         then:
         assert resp != null
-
-
 
     }
 

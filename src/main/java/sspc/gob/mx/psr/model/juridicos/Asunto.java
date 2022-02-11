@@ -14,16 +14,18 @@ import javax.validation.constraints.Size;
 @Setter
 @Table(name = "cat_asunto")
 public class Asunto {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_cat_asunto")
-    public Long id;
+    @Column(name = "id_cat_asunto", updatable = false, nullable = false)
+    private Long id;
 
     @NotNull
     @NotBlank
     @Size(min = 1, max = 30)
     private String nombre;
 
+    @NotNull
     @Size(min = 1, max = 300)
     private String descripcion;
 

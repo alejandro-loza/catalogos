@@ -10,7 +10,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     primaryKey: true
-                    primaryKeyName: cat_tipo_tratamiento_pkey
+                    autoIncrement: true
                   name: id_cat_tipo_tratamiento
                   type: INTEGER
               - column:

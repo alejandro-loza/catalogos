@@ -10,7 +10,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     primaryKey: true
-                    primaryKeyName: cat_modalidad_pkey
+                    autoIncrement: true
                   name: id_cat_modalidad
                   type: INTEGER
               - column:

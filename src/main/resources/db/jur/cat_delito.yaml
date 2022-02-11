@@ -10,7 +10,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     primaryKey: true
-                    primaryKeyName: cat_delito_pkey
+                    autoIncrement: true
                   name: id_cat_delito
                   type: INTEGER
               - column:

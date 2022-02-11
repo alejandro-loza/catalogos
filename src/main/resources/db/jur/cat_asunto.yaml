@@ -9,6 +9,7 @@ databaseChangeLog:
               - column:
                   name: id_cat_asunto
                   type: INT
+                  autoIncrement: true
                   constraints:
                     nullable: false
                     primaryKey: true

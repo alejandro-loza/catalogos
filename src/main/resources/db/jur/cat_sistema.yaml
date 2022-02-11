@@ -10,7 +10,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     primaryKey: true
-                    primaryKeyName: cat_sistema_pkey
+                    autoIncrement: true
                   name: id_cat_sistema
                   type: INTEGER
               - column:
