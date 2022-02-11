@@ -10,11 +10,11 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Getter
-@Table(name = "cat_asunto")
-public class Asunto {
+@Table(name = "cat_delito")
+public class Delito {
     @Id
     @GeneratedValue
-    @Column(name = "id_cat_asunto")
+    @Column(name = "id_cat_delito")
     public Long id;
 
     @NotNull
