@@ -27,4 +27,4 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                   name: activo
-                  type: boolean
+                  type: BIT(1)
