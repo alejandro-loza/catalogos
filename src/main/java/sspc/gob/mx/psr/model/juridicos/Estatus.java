@@ -10,12 +10,13 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Getter
-@Table(name = "cat_destinatario")
+@Table(name = "cat_estatus")
 public class Estatus {
+
     @Id
-    @GeneratedValue
-    @Column(name = "id_cat_destinatario")
-    public Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_cat_estatus", updatable = false, nullable = false)
+    private Long id;
 
     @NotNull
     @NotBlank

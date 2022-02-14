@@ -12,10 +12,11 @@ import javax.validation.constraints.Size;
 @Getter
 @Table(name = "cat_delito")
 public class Delito {
+
     @Id
-    @GeneratedValue
-    @Column(name = "id_cat_delito")
-    public Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_cat_delito", updatable = false, nullable = false)
+    private Long id;
 
     @NotNull
     @NotBlank

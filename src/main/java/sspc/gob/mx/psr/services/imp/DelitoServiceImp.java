@@ -19,7 +19,7 @@ public class DelitoServiceImp implements DelitoService {
 
     @Override
     public List<DelitoDto> lista(){
-        return delitoRepository.findAll()
+        return delitoRepository.findAllByActivo(true)
                 .stream().map(DelitoDto::new).collect(Collectors.toList());
     }
 

@@ -10,7 +10,7 @@ public class DestinatarioDto {
 
     public DestinatarioDto(Destinatario destinatario){
         super();
-        this.id = destinatario.id;
-        this.nombre = destinatario.nombre;
+        this.id = destinatario.getId();
+        this.nombre = destinatario.getNombre();
     }
 }

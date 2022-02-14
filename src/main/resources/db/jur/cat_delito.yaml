@@ -7,12 +7,12 @@ databaseChangeLog:
             tableName: cat_delito
             columns:
               - column:
+                  name: id_cat_delito
+                  type: INT
+                  autoIncrement: true
                   constraints:
                     nullable: false
                     primaryKey: true
-                    autoIncrement: true
-                  name: id_cat_delito
-                  type: INTEGER
               - column:
                   constraints:
                     nullable: false

@@ -7,12 +7,12 @@ databaseChangeLog:
             tableName: cat_juzgado
             columns:
               - column:
+                  name: id_cat_juzgado
+                  type: INT
+                  autoIncrement: true
                   constraints:
                     nullable: false
                     primaryKey: true
-                    autoIncrement: true
-                  name: id_cat_juzgado
-                  type: INTEGER
               - column:
                   constraints:
                     nullable: false

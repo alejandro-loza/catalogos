@@ -8,8 +8,16 @@ import org.springframework.web.client.RestTemplate
 import spock.lang.Specification
 import sspc.gob.mx.psr.model.Municipio
 import sspc.gob.mx.psr.model.juridicos.Asunto
+import sspc.gob.mx.psr.model.juridicos.Beneficio
+import sspc.gob.mx.psr.model.juridicos.Delito
+import sspc.gob.mx.psr.model.juridicos.Destinatario
+import sspc.gob.mx.psr.model.juridicos.Estatus
 import sspc.gob.mx.psr.repository.AsuntoRepository
+import sspc.gob.mx.psr.repository.BeneficioRepository
+import sspc.gob.mx.psr.repository.DelitoRepository
+import sspc.gob.mx.psr.repository.DestinatarioRepository
 import sspc.gob.mx.psr.repository.EstadoRepository
+import sspc.gob.mx.psr.repository.EstatusRepository
 import sspc.gob.mx.psr.repository.MunicipioRepository
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -25,6 +33,17 @@ class CatalogosControllerSpec extends Specification {
     @Autowired
     AsuntoRepository asuntoRepository
 
+    @Autowired
+    BeneficioRepository beneficioRepository
+
+    @Autowired
+    DelitoRepository delitoRepository
+
+    @Autowired
+    DestinatarioRepository destinatarioRepository
+
+    @Autowired
+    EstatusRepository estatusRepository
 
     def "Deberia traer todos los estados de la republica"(){
         when:
@@ -162,13 +181,12 @@ class CatalogosControllerSpec extends Specification {
         asunto1.with {
             nombre = 'test1'
             descripcion = 'test'
-            activo = true
+            activo = false
         }
         asuntoRepository.save(asunto1)
 
         Asunto asunto2 = new Asunto()
         asunto2.with {
-            id = 456
             nombre = 'test2'
             descripcion = 'test'
             activo = true
@@ -179,8 +197,132 @@ class CatalogosControllerSpec extends Specification {
         def resp = rest.getForEntity("http://localhost:${ port }/catalogos/asunto", List)
 
         then:
-        assert resp != null
+        assert resp.getStatusCode()
+                == HttpStatus.OK
+        assert resp.getBody().size() == 1
 
+        assert resp.getBody().first().nombre == asunto2.getNombre()
+
+
+    }
+
+    def "Debería traer todos los Beneficios"(){
+        given: 'una lista de beneficios guardados'
+        Beneficio beneficio1 = new Beneficio()
+        beneficio1.with {
+            nombre = 'test1'
+            descripcion= 'test'
+            activo= false
+        }
+        beneficioRepository.save(beneficio1)
+
+        Beneficio beneficio2 = new Beneficio()
+        beneficio2.with {
+            nombre = 'test2'
+            descripcion='test'
+            activo = true
+        }
+        beneficioRepository.save(beneficio2)
+
+        when:
+        def resp = rest.getForEntity("http://localhost:${ port }/catalogos/beneficio", List)
+
+        then:
+        assert resp.getStatusCode()
+                    == HttpStatus.OK
+        assert resp.getBody().size() == 1
+
+        assert resp.getBody().first().nombre == beneficio2.getNombre()
+
+    }
+
+    def "Debería traer todos los Delitos"(){
+        given: 'una lista de delitos guardados'
+        Delito delito1 = new Delito()
+        delito1.with {
+            nombre = 'test1'
+            descripcion = 'test'
+            activo = false
+        }
+        delitoRepository.save(delito1)
+
+        Delito delito2 = new Delito()
+        delito2.with {
+            nombre = 'test2'
+            descripcion = 'test'
+            activo = true
+        }
+        delitoRepository.save(delito2)
+
+        when:
+        def resp = rest.getForEntity("http://localhost:${ port }/catalogos/delito", List)
+
+        then:
+        assert resp.getStatusCode()
+                == HttpStatus.OK
+        assert resp.getBody().size() == 1
+
+        assert resp.getBody().first().nombre == delito2.getNombre()
+
+    }
+
+    def "Debería traer todos los Destinatarios"(){
+        given: 'una lista de destinatarios guardados'
+        Destinatario destinatario1 = new Destinatario()
+        destinatario1.with {
+            nombre = 'test1'
+            descripcion = 'test'
+            activo = false
+        }
+        destinatarioRepository.save(destinatario1)
+
+        Destinatario destinatario2 = new Destinatario()
+        destinatario2.with {
+            nombre = 'test2'
+            descripcion = 'test'
+            activo = true
+        }
+        destinatarioRepository.save(destinatario2)
+
+        when:
+        def resp = rest.getForEntity("http://localhost:${ port }/catalogos/destinatario", List)
+
+        then:
+        assert resp.getStatusCode()
+                == HttpStatus.OK
+        assert resp.getBody().size() == 1
+
+        assert resp.getBody().first().nombre == destinatario2.getNombre()
+
+    }
+
+    def "Debería traer todos los Estatus"(){
+        given: 'una lista de estatus guardados'
+        Estatus estatus1 = new Estatus()
+        estatus1.with {
+            nombre = 'test1'
+            descripcion = 'test'
+            activo = false
+        }
+        estatusRepository.save(estatus1)
+
+        Estatus estatus2 = new Estatus()
+        estatus2.with {
+            nombre = 'test 2'
+            descripcion = 'test'
+            activo = true
+        }
+        estatusRepository.save(estatus2)
+
+        when:
+        def resp = rest.getForEntity("http://localhost:${ port }/catalogos/estatus", List)
+
+        then:
+        assert resp.getStatusCode()
+                == HttpStatus.OK
+        assert resp.getBody().size() == 1
+
+        assert resp.getBody().first().nombre == estatus2.getNombre()
     }
 
     private static ArrayList<LinkedHashMap<String, Integer>> escolaridades() {

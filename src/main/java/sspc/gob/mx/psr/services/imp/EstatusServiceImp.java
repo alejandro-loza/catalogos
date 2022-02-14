@@ -19,7 +19,7 @@ public class EstatusServiceImp implements EstatusService {
 
     @Override
     public List<EstatusDto> lista(){
-        return estatusRepository.findAll()
+        return estatusRepository.findAllByActivo(true)
                 .stream().map(EstatusDto::new).collect(Collectors.toList());
     }
 

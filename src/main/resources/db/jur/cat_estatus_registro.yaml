@@ -7,12 +7,12 @@ databaseChangeLog:
             tableName: cat_estatus_registro
             columns:
               - column:
+                  name: id_cat_estatus_registro
+                  type: INT
+                  autoIncrement: true
                   constraints:
                     nullable: false
                     primaryKey: true
-                    autoIncrement: true
-                  name: id_cat_estatus
-                  type: INTEGER
               - column:
                   constraints:
                     nullable: false

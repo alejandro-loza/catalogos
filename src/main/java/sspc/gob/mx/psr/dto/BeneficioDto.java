@@ -10,7 +10,7 @@ public class BeneficioDto {
 
     public BeneficioDto(Beneficio beneficio){
         super();
-        this.id = beneficio.id;
-        this.nombre = beneficio.nombre;
+        this.id = beneficio.getId();
+        this.nombre = beneficio.getNombre();
     }
 }

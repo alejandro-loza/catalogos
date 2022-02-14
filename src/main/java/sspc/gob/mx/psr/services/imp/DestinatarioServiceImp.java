@@ -19,7 +19,7 @@ public class DestinatarioServiceImp implements DestinatarioService {
 
     @Override
     public List<DestinatarioDto> lista(){
-        return destinatarioRepository.findAll()
+        return destinatarioRepository.findAllByActivo(true)
                 .stream().map(DestinatarioDto::new).collect(Collectors.toList());
     }
 

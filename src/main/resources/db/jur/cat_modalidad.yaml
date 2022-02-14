@@ -7,12 +7,12 @@ databaseChangeLog:
             tableName: cat_modalidad
             columns:
               - column:
+                  name: id_cat_modalidad
+                  type: INT
+                  autoIncrement: true
                   constraints:
                     nullable: false
                     primaryKey: true
-                    autoIncrement: true
-                  name: id_cat_modalidad
-                  type: INTEGER
               - column:
                   constraints:
                     nullable: false

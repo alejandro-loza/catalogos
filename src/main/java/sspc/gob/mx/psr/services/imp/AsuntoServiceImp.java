@@ -19,7 +19,7 @@ public class AsuntoServiceImp implements AsuntoService {
 
     @Override
     public List<AsuntoDto> lista(){
-        return asuntoRepository.findAll()
+        return asuntoRepository.findAllByActivo(true)
                 .stream().map(AsuntoDto::new).collect(Collectors.toList());
     }
 

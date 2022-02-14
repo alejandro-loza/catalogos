@@ -10,7 +10,7 @@ public class DelitoDto {
 
     public DelitoDto(Delito delito){
         super();
-        this.id = delito.id;
-        this.nombre = delito.nombre;
+        this.id = delito.getId();
+        this.nombre = delito.getNombre();
     }
 }

@@ -10,7 +10,7 @@ public class EstatusDto {
 
     public EstatusDto(Estatus estatus){
         super();
-        this.id = estatus.id;
-        this.nombre = estatus.nombre;
+        this.id = estatus.getId();
+        this.nombre = estatus.getNombre();
     }
 }

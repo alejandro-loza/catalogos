@@ -13,12 +13,13 @@ import java.util.stream.Collectors;
 
 @Service
 public class BeneficioServiceImp implements BeneficioService {
+
     @Autowired
     BeneficioRepository beneficioRepository;
 
     @Override
     public List<BeneficioDto> lista(){
-        return beneficioRepository.findAll()
+        return beneficioRepository.findAllByActivo(true)
                 .stream().map(BeneficioDto::new).collect(Collectors.toList());
     }
 
