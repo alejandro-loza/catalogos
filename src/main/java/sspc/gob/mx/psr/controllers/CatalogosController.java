@@ -118,4 +118,7 @@ public class CatalogosController {
 
     @GetMapping(path = "/estatus", produces = "application/json")
     ResponseEntity estatus() { return new ResponseEntity<>( estatusService.lista(), HttpStatus.OK); }
+
+
+
 }
