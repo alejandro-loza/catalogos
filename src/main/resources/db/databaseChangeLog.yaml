@@ -41,6 +41,10 @@ databaseChangeLog:
   - include:
       file: db/jur/cat_tipo_tratamiento.yaml
   - include:
+      file: db/jur/centro_reclusion.yaml
+  - include:
+      file: db/data/centro_reclusion_data.yaml
+  - include:
       file: db/data/estados_data.yaml
   - include:
       file: db/data/municipio_data.yaml

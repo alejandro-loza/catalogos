@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: cat_tipo_tratamiento
+      id: cat_centro_reclusion
       author: alejandro.loza
       changes:
         - createTable:

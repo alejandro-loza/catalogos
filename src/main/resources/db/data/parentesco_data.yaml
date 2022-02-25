@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: pais_data
+      id: parentesco_data
       author: alejandro.hernandez
       changes:
         -  sql:

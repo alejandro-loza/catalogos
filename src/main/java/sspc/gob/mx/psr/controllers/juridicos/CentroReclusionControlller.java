@@ -7,22 +7,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sspc.gob.mx.psr.dto.CentroReclucionDto;
-import sspc.gob.mx.psr.services.juridicos.CentroReclucionService;
+import sspc.gob.mx.psr.dto.CentroReclusionDto;
+import sspc.gob.mx.psr.services.juridicos.CentroReclusionService;
 
 @RequestMapping("/catalogos")
 @RestController
-public class CentroReclucionControlller {
+public class CentroReclusionControlller {
     @Autowired
-    CentroReclucionService centroReclucionService;
+    CentroReclusionService centroReclusionService;
 
-    @GetMapping(path = "/centrosReclucion/{id}", produces = "application/json")
+    @GetMapping(path = "/centrosReclusion/{id}", produces = "application/json")
     ResponseEntity busca(@PathVariable("id") Long id) {
-        return new ResponseEntity<>( new CentroReclucionDto( centroReclucionService.busca(id)), HttpStatus.OK);
+        return new ResponseEntity<>( new CentroReclusionDto( centroReclusionService.busca(id)), HttpStatus.OK);
     }
 
-    @GetMapping(path = "/centrosReclucion", produces = "application/json")
+    @GetMapping(path = "/centrosReclusion", produces = "application/json")
     ResponseEntity lista() {
-        return new ResponseEntity<>( centroReclucionService.lista(), HttpStatus.OK);
+        return new ResponseEntity<>( centroReclusionService.lista(), HttpStatus.OK);
     }
 }
