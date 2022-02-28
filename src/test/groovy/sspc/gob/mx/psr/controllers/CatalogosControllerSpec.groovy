@@ -72,17 +72,17 @@ class CatalogosControllerSpec extends Specification {
 
         then:
         assert resp == [
-                [id:1001, nombre:'Aguascalientes', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
-                [id:1002, nombre:'Asientos', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
-                [id:1003, nombre:'Calvillo', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
-                [id:1004, nombre:'Cosio', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
-                [id:1005, nombre:'Jesús María', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
-                [id:1006, nombre:'Pabellón de Arteaga', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
-                [id:1007, nombre:'Rincón de Ramos', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
-                [id:1008, nombre:'San José de García', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
-                [id:1009, nombre:'Tepezalá', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
-                [id:1010, nombre:'El Llano', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
-                [id:1011, nombre:'San Francisco de los Romo', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true]
+                 [id:1001, nombre:'Aguascalientes', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                 [id:1002, nombre:'Asientos', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                 [id:1003, nombre:'Calvillo', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                 [id:1004, nombre:'Cosio', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                 [id:1010, nombre:'El Llano', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                 [id:1005, nombre:'Jesús María', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                 [id:1006, nombre:'Pabellón de Arteaga', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                 [id:1007, nombre:'Rincón de Ramos', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                 [id:1011, nombre:'San Francisco de los Romo', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                 [id:1008, nombre:'San José de García', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                 [id:1009, nombre:'Tepezalá', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true]
         ]
 
     }
@@ -102,15 +102,13 @@ class CatalogosControllerSpec extends Specification {
                 [id:1002, nombre:'Asientos', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
                 [id:1003, nombre:'Calvillo', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
                 [id:1004, nombre:'Cosio', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1010, nombre:'El Llano', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
                 [id:1005, nombre:'Jesús María', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
                 [id:1006, nombre:'Pabellón de Arteaga', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
                 [id:1007, nombre:'Rincón de Ramos', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
+                [id:1011, nombre:'San Francisco de los Romo', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
                 [id:1008, nombre:'San José de García', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
-                [id:1009, nombre:'Tepezalá', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
-                [id:1010, nombre:'El Llano', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true],
-                [id:1011, nombre:'San Francisco de los Romo', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true]]
-
-
+                [id:1009, nombre:'Tepezalá', descripcion:'', estado:[id:1, nombre:'AGUASCALIENTES'], activo:true]]
     }
 
     def "Deberia traer todos los municipios de la guerrero"(){

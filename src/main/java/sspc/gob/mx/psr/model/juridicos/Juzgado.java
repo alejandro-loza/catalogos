@@ -7,14 +7,15 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+
 @Entity
 @Getter
-@Table(name = "cat_estatus")
-public class Estatus {
+@Table(name = "cat_juzgado")
+public class Juzgado {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_cat_estatus", updatable = false, nullable = false)
+    @Column(name = "id_cat_juzgado", updatable = false, nullable = false)
     private Long id;
 
     @NotNull

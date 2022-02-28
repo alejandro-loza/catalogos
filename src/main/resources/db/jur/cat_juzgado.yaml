@@ -16,7 +16,7 @@ databaseChangeLog:
               - column:
                   constraints:
                     nullable: false
-                  name: nombre_juzgado
+                  name: nombre
                   type: VARCHAR(70)
               - column:
                   name: descripcion

@@ -60,3 +60,5 @@ databaseChangeLog:
       file: db/data/ocupacion_data.yaml
   - include:
       file: db/data/parentesco_data.yaml
+  - include:
+      file: db/data/juzgado_data.yaml
