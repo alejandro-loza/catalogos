@@ -9,6 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface CentroReclusionRepository extends JpaRepository<CentroReclusion, Long> {
-    List<CentroReclusion> findAllByActivo(boolean activo);
+    List<CentroReclusion> findAllByActivoOrderByNombreAsc(boolean activo);
     Optional<CentroReclusion> findByIdAndActivo(Long id, boolean activo);
 }

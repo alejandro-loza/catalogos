@@ -19,7 +19,7 @@ public class MunicipioServiceImp implements MunicipioService {
 
     @Override
     public List<MunicipioDto> muncipiosPorEstado(Estado estado) {
-        return municipioRepository.findAllByEstadoAndActivo(estado, true)
+        return municipioRepository.findAllByEstadoAndActivoOrderByNombreAsc(estado, true)
                 .stream().map(MunicipioDto::new).collect(Collectors.toList());
     }
 

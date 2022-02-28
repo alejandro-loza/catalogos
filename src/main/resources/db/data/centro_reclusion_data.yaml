@@ -4,8 +4,8 @@ databaseChangeLog:
       author: alejandro.hernandez
       changes:
         -  sql:
-             sql: INSERT INTO cat_centro_reclusion(id_cat_centro_reclusion, nombre, descripcion, activo)VALUES (1,'ALCATRAZ','','1');
+             sql: INSERT INTO cat_centro_reclusion(id_cat_centro_reclusion, nombre, descripcion, activo)VALUES (1,'USHUAIA','','1');
         - sql:
              sql: INSERT INTO cat_centro_reclusion(id_cat_centro_reclusion, nombre, descripcion, activo)VALUES (2,'KAROSTA','','1');
         - sql:
-            sql: INSERT INTO cat_centro_reclusion(id_cat_centro_reclusion, nombre, descripcion, activo)VALUES (3,'USHUAIA','','1');
+            sql: INSERT INTO cat_centro_reclusion(id_cat_centro_reclusion, nombre, descripcion, activo)VALUES (3,'ALCATRAZ','','1');

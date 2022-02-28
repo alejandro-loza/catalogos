@@ -1,6 +1,7 @@
 package sspc.gob.mx.psr.services.imp;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import sspc.gob.mx.psr.dto.EstadoDto;
 import sspc.gob.mx.psr.exeptions.ItemNotFoundException;
@@ -19,7 +20,7 @@ public class EstadoServiceImp implements EstadoService {
 
     @Override
     public List<EstadoDto> lista(){
-        return estadoRepository.findAll()
+        return estadoRepository.findAll(Sort.by(Sort.Direction.ASC, "nombre"))
                 .stream().map(EstadoDto::new).collect(Collectors.toList());
    }
 

@@ -51,7 +51,8 @@ class CatalogosControllerSpec extends Specification {
 
         then:
         assert resp.size() == 33
-        assert resp == estadosRespuesta()
+        assert resp.first().nombre == 'AGUASCALIENTES'
+        assert resp.last().nombre == 'ZACATECAS'
     }
 
     def "Deberia traer todos los municipios de la hidalgo"(){

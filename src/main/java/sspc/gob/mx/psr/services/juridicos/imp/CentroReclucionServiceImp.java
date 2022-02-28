@@ -14,17 +14,17 @@ import java.util.stream.Collectors;
 @Service
 public class CentroReclucionServiceImp implements CentroReclusionService {
     @Autowired
-    CentroReclusionRepository centroReclucionRepository;
+    CentroReclusionRepository centroReclusionRepository;
 
     @Override
     public CentroReclusion busca(Long id) throws ItemNotFoundException {
-        return centroReclucionRepository.findByIdAndActivo(id, true)
-                .orElseThrow(() -> new ItemNotFoundException("centroReclucion.notFound") );
+        return centroReclusionRepository.findByIdAndActivo(id, true)
+                .orElseThrow(() -> new ItemNotFoundException("centroReclusion.notFound") );
     }
 
     @Override
     public List<CentroReclusionDto> lista(){
-        return centroReclucionRepository.findAllByActivo(true)
+        return centroReclusionRepository.findAllByActivoOrderByNombreAsc(true)
                 .stream().map(CentroReclusionDto::new).collect(Collectors.toList());
     }
 

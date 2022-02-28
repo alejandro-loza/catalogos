@@ -18,15 +18,16 @@ class CentroReclusionSpec extends Specification{
 
         then:
         assert resp.size() == 3
+        assert resp.first().nombre == "ALCATRAZ"
     }
 
     def "Deberia traer centro de reclusion Alcatraz"(){
 
         when:
-        def resp = rest.getForEntity("http://localhost:${port}/catalogos/centrosReclusion/1", Map)?.body
+        def resp = rest.getForEntity("http://localhost:${port}/catalogos/centrosReclusion/3", Map)?.body
 
         then:
-        assert resp == [id:1, nombre:'ALCATRAZ']
+        assert resp == [id:3, nombre:'ALCATRAZ']
 
 
     }
