@@ -119,6 +119,9 @@ public class CatalogosController {
     @GetMapping(path = "/estatus", produces = "application/json")
     ResponseEntity estatus() { return new ResponseEntity<>( estatusService.lista(), HttpStatus.OK); }
 
-
+    @GetMapping(path = "/estatus/{estatusId}", produces = "application/json")
+    ResponseEntity buscaEstatus(@PathVariable("estatusId") Long estatusId) {
+        return new ResponseEntity<>( new EstadoDto( estadoService.busca(estatusId)), HttpStatus.OK);
+    }
 
 }

@@ -1,6 +1,5 @@
 package sspc.gob.mx.psr.controllers.handlers;
 
-
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -14,11 +13,13 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.multipart.support.MissingServletRequestPartException;
 import org.springframework.web.servlet.NoHandlerFoundException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+import sspc.gob.mx.psr.exeptions.ItemNotFoundException;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
@@ -125,6 +126,13 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<Object>(apiError, new HttpHeaders(), apiError.getStatus());
     }
 
+    @ExceptionHandler({ ItemNotFoundException.class })
+    public ResponseEntity<Object> handleConstraintViolation(final ItemNotFoundException ex, final WebRequest request) {
+        logger.info(ex.getClass().getName());
+        final ApiError apiError = new ApiError(HttpStatus.NOT_FOUND, ex.getMessage(), ex.getLocalizedMessage());
+        return new ResponseEntity<Object>(apiError, new HttpHeaders(), apiError.getStatus());
+    }
+
     // 405
 
     @Override
@@ -163,6 +171,13 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
         logger.error("error", ex);
         //
         final ApiError apiError = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, ex.getLocalizedMessage(), "error occurred");
+        return new ResponseEntity<Object>(apiError, new HttpHeaders(), apiError.getStatus());
+    }
+
+    @ExceptionHandler({ ResourceAccessException.class })
+    public ResponseEntity<Object> handleConstraintViolation(final ResourceAccessException ex, final WebRequest request) {
+        logger.info(ex.getClass().getName());
+        final ApiError apiError = new ApiError(HttpStatus.BAD_GATEWAY, ex.getMessage(), ex.getLocalizedMessage());
         return new ResponseEntity<Object>(apiError, new HttpHeaders(), apiError.getStatus());
     }
 
